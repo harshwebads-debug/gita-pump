@@ -1,0 +1,2583 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* --- DARK INDUSTRIAL THEME --- */
+
+ :root {
+    --gp-dark: #0f172a;
+    /* Deepest Blue/Black */
+    --gp-panel: #1e293b;
+    /* Panel Color */
+    --gp-blue: #3b82f6;
+    /* Bright Blue */
+    --gp-teal: #06b6d4;
+    /* Cyan/Teal Glow */
+    --gp-text: #f1f5f9;
+    /* White-ish text */
+    --gp-gray: #94a3b8;
+    /* Muted text */
+    --font-tech: 'Exo 2', sans-serif;
+    --font-head: 'Rajdhani', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    /* Light BG for body to show contrast */
+    font-family: var(--font-tech);
+    color: var(--gp-dark);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.fixed-sticker {
+    position: fixed;
+    bottom: -55px;
+    /* bottom se thoda upar */
+    left: -30px;
+    /* right side */
+    width: 180px;
+    /* size tu apne hisaab se adjust kar sakta hai */
+    z-index: 9999;
+    /* taaki sabke upar dikhe */
+    cursor: pointer;
+}
+
+
+/* fixed icons */
+
+.fixed-icons {
+    position: fixed;
+    top: 70%;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+}
+
+.fixed-icons .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.fixed-icons .icon.call {
+    background: #007bff;
+    /* Blue */
+}
+
+.fixed-icons .icon.whatsapp {
+    background: #25d366;
+    /* WhatsApp Green */
+}
+
+.fixed-icons .icon.mail {
+    background: #ff5e5e;
+    /* Red */
+}
+
+.fixed-icons .icon:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* fixed icons */
+
+
+/* icons */
+
+
+/* whtsapp icon */
+
+
+/* ✅ WhatsApp Floating Button */
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    animation: blink 1.2s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0px rgba(37, 211, 102, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
+    }
+}
+
+
+/* icons */
+
+
+/* --- 1. ULTRA SLIM TOP BAR --- */
+
+.top-strip {
+    background: linear-gradient(90deg, #020617 0%, #1e293b 100%);
+    color: var(--gp-gray);
+    font-size: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.top-info span {
+    margin-right: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.top-info i {
+    color: var(--gp-teal);
+    margin-right: 6px;
+}
+
+.top-social a {
+    color: var(--gp-gray);
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+.top-social a:hover {
+    color: var(--gp-teal);
+    text-shadow: 0 0 10px var(--gp-teal);
+}
+
+
+/* --- 2. DARK GLASS NAVBAR --- */
+
+.navbar-area {
+    background: rgba(15, 23, 42, 0.95);
+    /* Dark Translucent */
+    backdrop-filter: blur(10px);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Logo Area (FIXED) */
+
+.navbar-brand {
+    background: #fff;
+    /* White box for logo clarity */
+    padding: 12px 35px 18px 25px;
+    /* Increased bottom/right padding to prevent cut */
+    margin-right: 30px;
+    /* Adjusted clip-path to be less aggressive at bottom right */
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    height: 80px !important;
+    padding: 6px 32px !important;
+}
+
+.navbar-brand img {
+    height: 48px;
+    /* Slightly reduced height to fit perfectly */
+    width: auto;
+}
+
+
+/* Links */
+
+.nav-link {
+    font-family: var(--font-head);
+    color: var(--gp-text) !important;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 25px 12px !important;
+    position: relative;
+    opacity: 0.8;
+}
+
+.nav-link i {
+    font-size: 12px;
+    margin-right: 5px;
+    color: var(--gp-gray);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+
+/* Hover Glow Effect */
+
+.nav-link:hover,
+.nav-link.active {
+    opacity: 1;
+    color: #fff !important;
+}
+
+.nav-link:hover i {
+    color: var(--gp-teal);
+    opacity: 1;
+}
+
+
+/* Glowing Line */
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--gp-teal);
+    box-shadow: 0 0 10px var(--gp-teal);
+    transition: 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+
+/* --- 3. DARK MEGA MENU --- */
+
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .nav-item.dropdown.mega-item {
+        position: static;
+    }
+    .dropdown-menu {
+        display: none;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: 0.3s;
+        background: #1e293b;
+        /* Dark Panel */
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-top: 3px solid var(--gp-teal);
+        padding: 0;
+        margin-top: 0;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+    .dropdown-menu.mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 40px 0;
+    }
+    /* Mega Menu Grid */
+    .mega-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .menu-col h6 {
+        color: var(--gp-teal);
+        font-family: var(--font-head);
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .dropdown-item {
+        color: var(--gp-gray);
+        font-size: 14px;
+        padding: 8px 0;
+        background: transparent;
+        transition: 0.2s;
+        border-left: 2px solid transparent;
+    }
+    .dropdown-item:hover {
+        color: #fff;
+        background: transparent;
+        padding-left: 10px;
+        border-left: 2px solid var(--gp-teal);
+        text-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
+    }
+}
+
+
+/* --- 4. GLOWING BUTTON --- */
+
+.btn-glow {
+    background: transparent;
+    color: var(--gp-teal);
+    border: 1px solid var(--gp-teal);
+    font-family: var(--font-head);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    margin-left: 20px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--gp-teal);
+    z-index: -1;
+    transition: 0.4s;
+}
+
+.btn-glow:hover {
+    color: #000;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
+.btn-glow:hover::before {
+    width: 100%;
+}
+
+
+/* --- 5. MOBILE APP STYLE --- */
+
+@media (max-width: 991px) {
+    .navbar-brand {
+        background: transparent;
+        padding: 10px;
+        clip-path: none;
+        margin-right: 0;
+    }
+    .navbar-brand img {
+        filter: brightness(0) invert(1);
+    }
+    /* Make logo white */
+    .navbar-toggler {
+        border: none;
+        color: #fff;
+        font-size: 28px;
+    }
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #0f172a;
+        /* Dark BG */
+        z-index: 9999;
+        padding: 80px 30px;
+        transition: 0.4s ease;
+        overflow-y: auto;
+    }
+    .navbar-collapse.show {
+        right: 0;
+    }
+    .mobile-close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .nav-link {
+        font-size: 20px;
+        padding: 15px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-link::after {
+        display: none;
+    }
+    /* Mobile Dropdown */
+    .dropdown-menu {
+        background: #151e32;
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding-left: 20px;
+        display: none;
+        margin-bottom: 20px;
+    }
+    .menu-col h6 {
+        color: var(--gp-teal);
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .dropdown-item {
+        color: #cbd5e1;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+    .btn-glow {
+        width: 100%;
+        text-align: center;
+        margin: 30px 0;
+        color: #fff;
+        background: var(--gp-teal);
+        border: none;
+    }
+}
+
+.menu-col a:hover {
+    color: var(--gp-teal);
+}
+
+
+/* --- HERO SECTION STYLES --- */
+
+.hero-section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    /* Adapts to image height */
+    background: #000;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    /* For 3D effects */
+}
+
+.swiper-slide {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    /* Important for Zoom effect */
+}
+
+
+/* Image Styling with Animation */
+
+.slide-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 8s ease;
+    /* Smooth Zoom Duration */
+    transform-origin: center center;
+}
+
+
+/* Active Slide Zoom Effect (Ken Burns) */
+
+.swiper-slide-active .slide-img {
+    transform: scale(1.08);
+    /* Subtle Zoom In */
+}
+
+
+/* --- MODERN NAVIGATION ARROWS --- */
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--gp-teal);
+    width: 60px;
+    height: 60px;
+    background: rgba(15, 23, 42, 0.6);
+    /* Dark Glass */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 12px;
+    /* Modern Rounded Square */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateX(20px);
+    /* Hidden initially */
+}
+
+.swiper-button-prev {
+    transform: translateX(-20px);
+}
+
+
+/* Show arrows on hover */
+
+.hero-section:hover .swiper-button-next,
+.hero-section:hover .swiper-button-prev {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--gp-teal);
+    color: #000;
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
+    /* Glowing Effect */
+    border-color: var(--gp-teal);
+    transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+/* --- MODERN PROGRESS BAR PAGINATION --- */
+
+.swiper-pagination-progressbar {
+    background: rgba(255, 255, 255, 0.1);
+    height: 4px !important;
+    bottom: 0 !important;
+    top: auto !important;
+}
+
+.swiper-pagination-progressbar-fill {
+    background: var(--gp-teal) !important;
+    box-shadow: 0 0 10px var(--gp-teal);
+}
+
+
+/* --- CUSTOM FRACTION PAGINATION (Bottom Right) --- */
+
+.custom-pagination {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+    color: #fff;
+    font-family: var(--font-head);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-left: 4px solid var(--gp-teal);
+    backdrop-filter: blur(5px);
+}
+
+.current-slide {
+    color: var(--gp-teal);
+}
+
+.total-slides {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+
+/* --- SECTION: GRAND STATEMENT DESIGN --- */
+
+
+/* Unique Class Prefix: gp-grand- */
+
+
+/* 1. Main Wrapper - Big & Bold */
+
+.gp-grand-wrapper {
+    position: relative;
+    margin: 5rem auto;
+    /* More vertical space */
+    max-width: 1400px;
+    /* Wider container */
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border-radius: 4px;
+    /* Sharp, professional corners */
+    /* The "Grand" Left Border Accent */
+    border-left: 8px solid #06b6d4;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    /* Heavy shadow for depth */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+
+/* Subtle Hover Lift */
+
+.gp-grand-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 70px rgba(6, 182, 212, 0.15);
+}
+
+
+/* Decorative Top Line */
+
+.gp-grand-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #06b6d4, transparent);
+    opacity: 0.5;
+}
+
+
+/* 2. Inner Content Area */
+
+.gp-grand-inner {
+    padding: 5rem 4rem;
+    /* HUGE padding to make it look big */
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Background Watermark/Texture Effect via CSS */
+
+.gp-grand-inner::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
+    border-radius: 100% 0 0 0;
+    pointer-events: none;
+}
+
+
+/* 3. Text Styling - Large & Commanding */
+
+.gp-grand-text {
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    /* ~24px: Much larger text */
+    line-height: 1.8;
+    font-weight: 300;
+    text-align: left;
+    /* Professional left alignment */
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+
+/* 4. Brand Highlight */
+
+.gp-grand-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    /* Even bigger brand name */
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    /* Underline Effect */
+    border-bottom: 2px solid rgba(6, 182, 212, 0.5);
+}
+
+
+/* Mobile Responsiveness */
+
+@media (max-width: 768px) {
+    .gp-grand-wrapper {
+        margin: 2rem 15px;
+        border-left-width: 5px;
+    }
+    .gp-grand-inner {
+        padding: 3rem 1.5rem;
+    }
+    .gp-grand-text {
+        font-size: 1.15rem;
+        text-align: left;
+    }
+    .gp-grand-brand {
+        font-size: 1.35rem;
+    }
+}
+
+
+/* --- SECTION: MODERN UPGRADE (Retaining Brand Colors) --- */
+
+
+/* Class prefix: gp-pro- */
+
+.gp-pro-section {
+    padding: 60px 0;
+    /* Increased vertical padding */
+    background: #ffffff;
+    position: relative;
+}
+
+
+/* Container */
+
+.gp-pro-container {
+    max-width: 1300px;
+    /* Increased width significantly */
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+
+/* 1. Main Content Wrapper */
+
+.gp-pro-item {
+    position: relative;
+    margin-top: 40px;
+    /* More space for the bigger header */
+}
+
+
+/* 2. The Heading (Floating Badge Style) */
+
+
+/* Old color #0b839b used, but with gradient and shadow for premium feel */
+
+.gp-pro-heading {
+    background: linear-gradient(135deg, #0b839b 0%, #086e82 100%);
+    color: #ffffff;
+    font-family: 'Teko', sans-serif;
+    /* Condensed, tall font like industrial headers */
+    font-size: 2.5rem;
+    /* Increased font size */
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 15px 50px;
+    /* Increased padding */
+    /* The "Float" Effect */
+    position: absolute;
+    top: -45px;
+    /* Adjusted top position for larger size */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    /* Shape styling */
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(11, 131, 155, 0.4);
+    /* Colored shadow */
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+
+/* Small triangle to make it look 3D (Optional subtle detail) */
+
+.gp-pro-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #086e82;
+}
+
+
+/* 3. The Paragraph Box */
+
+
+/* Old background #e5f1f8 used, but made cleaner */
+
+.gp-pro-text {
+    background-color: #e5f1f8;
+    color: #333;
+    /* Pure black text wasn't good, dark grey is better */
+    font-size: 1.3rem;
+    /* Increased font size */
+    line-height: 1.9;
+    text-align: justify;
+    /* Layout & Spacing */
+    padding: 3rem 3rem 3rem 3rem;
+    /* Significantly increased padding */
+    border-radius: 12px;
+    /* Premium touch: Subtle border and shadow */
+    border: 1px solid rgba(11, 131, 155, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    margin: 0;
+}
+
+
+/* Decorative "Corner Accents" to make it look engineered */
+
+.gp-pro-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    /* Thicker accent line */
+    background: linear-gradient(90deg, #0b839b, transparent, #0b839b);
+    border-radius: 12px 12px 0 0;
+    opacity: 0.5;
+}
+
+
+/* 4. Strong Text Highlight */
+
+.gp-pro-text strong {
+    color: #0b839b;
+    /* Brand color text */
+    font-weight: 600;
+}
+
+
+/* Mobile Adjustments */
+
+@media (max-width: 768px) {
+    .gp-pro-section {
+        padding: 80px 0;
+    }
+    .gp-pro-heading {
+        font-size: 1.9rem;
+        padding: 12px 35px;
+        top: -30px;
+    }
+    .gp-pro-text {
+        padding: 4rem 2rem 2.5rem 2rem;
+        text-align: left;
+        /* Better for mobile */
+        font-size: 1.1rem;
+    }
+}
+
+
+/* --- SECTION STRUCTURE --- */
+
+
+/* .gp-catalog-section {
+    padding: 40px 0 50px 0; */
+
+
+/* background: linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 45%, #E6F0F5 100%); */
+
+
+/* background: url(https://image.slidesdocs.com/responsive-images/background/pbx3d--pbx3d--pump-dxf-powerpoint-background_4980faac72__960_540.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+} */
+
+.gp-catalog-section {
+    padding: 40px 0 50px 0;
+    background: url(https://image.slidesdocs.com/responsive-images/background/pbx3d--pbx3d--pump-dxf-powerpoint-background_4980faac72__960_540.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* BLACK OVERLAY */
+
+.gp-catalog-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    /* <— adjust opacity if needed */
+    z-index: 1;
+}
+
+
+/* To bring content above overlay */
+
+.gp-catalog-section>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* 1. Geometric Tech Pattern (Subtle Background Detail) */
+
+.gp-catalog-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle Grid Lines */
+    background-image: linear-gradient(rgba(11, 131, 155, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(11, 131, 155, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* 2. Soft Ambient Side Glow (Atmosphere) */
+
+.gp-catalog-section::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.04) 0%, transparent 60%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* Ensure content sits above background */
+
+.gp-container-layer {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* --- HEADING DESIGN --- */
+
+.gp-header-wrap {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gp-main-title-pro {
+    font-family: var(--font-head);
+    font-size: 52px;
+    /* Slightly larger */
+    color: #ffff;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 800;
+    /* Extra Bold */
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Glowing Teal Line Under Title */
+
+.gp-main-title-pro::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    /* Gradient and glow for premium feel */
+    background: linear-gradient(90deg, transparent, var(--gp-teal), transparent);
+    margin: 15px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(6, 182, 212, 0.5);
+}
+
+
+/* --- CARD DESIGN --- */
+
+.productSwiper {
+    /* More padding to allow huge hover glows without clipping */
+    padding: 30px 20px 20px 20px !important;
+    overflow: visible;
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.gp-card-modern {
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Snappy transition */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Needed for the accent flash */
+    border: none;
+    /* Removed boring border */
+    border-left: 5px solid #0f172a;
+}
+
+
+/* Accent flash on top */
+
+.gp-card-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gp-teal);
+    transform: scaleX(0);
+    /* Hidden initially */
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: 5;
+    box-shadow: 0 0 15px var(--gp-teal);
+}
+
+
+/* Premium Hover Effect: Dark Mode Switch & Glow */
+
+.gp-card-modern:hover {
+    transform: translateY(-12px);
+    /* Switch to dark panel color on hover */
+    background-color: var(--gp-panel);
+    /* Strong Teal Glow shadow */
+    box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+}
+
+.gp-card-modern:hover::before {
+    transform: scaleX(1);
+    /* Show top accent */
+}
+
+
+/* Image Area */
+
+.gp-img-wrap {
+    height: 260px;
+    /* Radial gradient creates a "pedestal" effect */
+    /* background: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 100%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 4px; */
+    transition: all 0.4s ease;
+}
+
+
+/* Slight darken of image background on hover to make product pop */
+
+.gp-card-modern:hover .gp-img-wrap {
+    background: radial-gradient(circle at center, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.gp-pump-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    /* Subtle drop shadow on the product itself */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.05));
+}
+
+.gp-card-modern:hover .gp-pump-img {
+    transform: scale(1.1) translateY(-5px);
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.1));
+}
+
+
+/* Content Area */
+
+.gp-content {
+    padding: 15px 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #0f172a;
+    color: #ffff !important;
+    transition: all 0.4s ease;
+}
+
+
+/* Switch content background to dark on hover */
+
+.gp-card-modern:hover .gp-content {
+    background-color: var(--gp-panel);
+}
+
+
+/* Product Title */
+
+.gp-title {
+    font-family: var(--font-head);
+    font-size: 21px;
+    line-height: 1.3;
+    color: #ffff;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+
+/* Title turns white on hover for contrast against dark bg */
+
+.gp-card-modern:hover .gp-title {
+    color: var(--gp-text);
+}
+
+
+/* Action Arrow */
+
+.gp-action {
+    margin-top: auto;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    /* Light gray bg */
+    color: var(--gp-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.gp-card-modern:hover .gp-action {
+    background: var(--gp-teal);
+    color: #ffffff;
+    transform: rotate(-45deg) scale(1.1);
+    /* Rotate and enlarge */
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    /* Strong glow */
+}
+
+
+/* --- NAVIGATION BUTTONS --- */
+
+.gp-nav-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Reduced margin top to bring arrows closer */
+    margin-top: 20px;
+}
+
+.gp-nav-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #fff;
+    /* Removed border, used shadow instead for cleaner look */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    color: var(--gp-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 18px;
+    border: 1px solid #f1f5f9;
+}
+
+.gp-nav-btn:hover {
+    background: var(--gp-teal);
+    color: #ffffff;
+    transform: translateY(-5px);
+    /* Strong glow on hover */
+    box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4);
+    border-color: var(--gp-teal);
+}
+
+@media (max-width: 768px) {
+    .gp-main-title-pro {
+        font-size: 36px;
+    }
+    .gp-catalog-section {
+        padding: 60px 0;
+    }
+}
+
+
+/* --- SECTION WRAPPER --- */
+
+.gp-why-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* INDUSTRIAL CSS BACKGROUND (Increased Visibility) */
+
+.gp-why-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 1. Diagonal Machined Lines (Thoda Darker) */
+    /* 2. Vertical Grid Line (Teal Tint) */
+    /* 3. Horizontal Grid Line (Teal Tint) */
+    background-image: repeating-linear-gradient( -45deg, transparent, transparent 10px, rgba(15, 23, 42, 0.05) 10px, rgba(15, 23, 42, 0.05) 12px), linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+    /* Size for Grid - Thoda dense kiya hai taaki dikhe */
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* Vignette (Corner Fade) - Thoda kam kiya taaki pattern dikhe */
+
+.gp-why-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(255, 255, 255, 0.9) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+}
+
+
+/* --- HEADER --- */
+
+.gp-sec-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.gp-sec-title {
+    font-family: var(--font-head);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--gp-dark);
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.gp-sec-title span {
+    color: var(--gp-teal);
+}
+
+.gp-sec-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--gp-teal);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+
+/* --- LAYOUT GRID --- */
+
+.gp-main-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+
+/* === LEFT COLUMN: INTERACTIVE DASHBOARD === */
+
+.gp-interactive-col {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* 1. Navigation Grid (4 Buttons) */
+
+.gp-nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.gp-mini-tab {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.gp-mini-icon {
+    font-size: 24px;
+    color: var(--gp-gray);
+    transition: all 0.3s;
+}
+
+.gp-mini-text {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gp-dark);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+
+/* Active/Hover State for Tabs */
+
+.gp-mini-tab:hover {
+    border-color: var(--gp-teal);
+    transform: translateY(-3px);
+}
+
+.gp-mini-tab.active {
+    background: var(--gp-dark);
+    border-color: var(--gp-dark);
+    box-shadow: 0 10px 25px rgba(6, 182, 212, 0.25);
+}
+
+.gp-mini-tab.active .gp-mini-icon {
+    color: var(--gp-teal);
+    transform: scale(1.1);
+}
+
+.gp-mini-tab.active .gp-mini-text {
+    color: #fff;
+}
+
+
+/* 2. Display Screen (Content Area) */
+
+.gp-display-screen {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px;
+    flex-grow: 1;
+    /* Fills remaining height */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Decorative "Screen" effects */
+
+.gp-display-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gp-teal);
+}
+
+.gp-tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.gp-tab-content.active {
+    display: block;
+}
+
+.gp-screen-title {
+    font-family: var(--font-head);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gp-teal);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gp-screen-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #475569;
+    text-align: justify;
+}
+
+
+/* === RIGHT COLUMN: STATIC TECHNICAL CARD === */
+
+.gp-static-col {
+    flex: 1.2;
+    /* Slightly wider */
+    min-width: 300px;
+}
+
+.gp-tech-card {
+    background: #f8fafc;
+    /* Very light slate background */
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 50px;
+    height: 100%;
+    /* Match height */
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Decorative Corner */
+
+.gp-tech-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, transparent 50%, rgba(6, 182, 212, 0.1) 50%);
+    border-radius: 0 12px 0 0;
+}
+
+.gp-tech-header {
+    font-family: var(--font-head);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gp-dark);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gp-tech-header i {
+    color: var(--gp-teal);
+}
+
+.gp-tech-text {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #334155;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.gp-highlight-box {
+    background: #ffffff;
+    border-left: 4px solid var(--gp-teal);
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.gp-founder-name {
+    color: var(--gp-dark);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .gp-main-row {
+        flex-direction: column-reverse;
+    }
+    /* Stack: Tech Card on Top on Mobile? Or Bottom? Kept default */
+}
+
+
+/* --- SECTION STYLING --- */
+
+.gp-research-section {
+    padding: 100px 0;
+    background-color: var(--gp-dark);
+    /* Dark background for Cinematic feel */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Abstract Glow behind Video */
+
+.gp-research-section::before {
+    content: '';
+    position: absolute;
+    right: -10%;
+    top: 20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* Tech Grid Overlay */
+
+.gp-research-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+}
+
+
+/* --- CONTENT COLUMN --- */
+
+.gp-text-col {
+    padding-right: 40px;
+}
+
+.gp-subtitle {
+    font-family: var(--font-head);
+    color: var(--gp-teal);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-bottom: 2px solid var(--gp-teal);
+    padding-bottom: 5px;
+}
+
+.gp-main-heading {
+    font-family: var(--font-head);
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.gp-desc-text {
+    color: var(--gp-gray);
+    /* Light grey for readability on dark */
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: justify;
+    border-left: 3px solid rgba(6, 182, 212, 0.3);
+    padding-left: 20px;
+}
+
+
+/* Modern CTA Button */
+
+.gp-btn-glow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 35px;
+    background: transparent;
+    border: 1px solid var(--gp-teal);
+    color: var(--gp-teal);
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.gp-btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.gp-btn-glow:hover {
+    background: var(--gp-teal);
+    color: #000;
+    /* Black text on hover for contrast */
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+}
+
+.gp-btn-glow:hover::before {
+    left: 100%;
+}
+
+
+/* --- VIDEO COLUMN --- */
+
+.gp-video-wrapper {
+    position: relative;
+    padding: 10px;
+    /* Space for the border effect */
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    /* Thin teal border */
+    border-radius: 12px;
+    /* Glassy background behind video */
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Decorative Corners for Tech Feel */
+
+.gp-video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 30px;
+    height: 30px;
+    border-top: 3px solid var(--gp-teal);
+    border-left: 3px solid var(--gp-teal);
+    border-radius: 12px 0 0 0;
+}
+
+.gp-video-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 30px;
+    height: 30px;
+    border-bottom: 3px solid var(--gp-teal);
+    border-right: 3px solid var(--gp-teal);
+    border-radius: 0 0 12px 0;
+}
+
+.gp-video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Aspect Ratio Hack (16:9 approx) or specific height */
+    height: 380px;
+    background: #000;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures video fills the box perfectly */
+    display: block;
+}
+
+
+/* Scanline Overlay (Optional Tech Effect) */
+
+.gp-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: 2;
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 992px) {
+    .gp-research-section {
+        padding: 60px 0;
+    }
+    .gp-text-col {
+        padding-right: 0;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .gp-desc-text {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+    }
+    .gp-main-heading {
+        font-size: 36px;
+    }
+    .gp-video-container {
+        height: 250px;
+    }
+}
+
+
+/* --- SECTION STYLING --- */
+
+.gp-service-section {
+    padding: 120px 0 160px 0;
+    /* Huge padding for grandeur */
+    background-color: #f8fafc;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+/* Tech Grid Background */
+
+.gp-service-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+}
+
+
+/* --- CARD DESIGN: THE DARK MONOLITHS --- */
+
+.gp-premium-card {
+    position: relative;
+    background: linear-gradient(145deg, #0f172a, #1e293b);
+    /* Dark Gradient */
+    border-radius: 20px;
+    padding: 40px 30px;
+    margin-top: 40px;
+    /* Space for popping icon */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+    /* Allows icon to pop out */
+    text-align: center;
+    height: 100%;
+    z-index: 1;
+}
+
+
+/* Glow Effect Behind Card */
+
+.gp-premium-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: var(--gp-teal);
+    filter: blur(60px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+
+/* Hover State */
+
+.gp-premium-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--gp-teal);
+    box-shadow: 0 30px 70px rgba(6, 182, 212, 0.15);
+    /* Teal Shadow */
+}
+
+.gp-premium-card:hover::before {
+    opacity: 0.15;
+    /* Subtle glow appears */
+}
+
+
+/* --- 3D POP-OUT ICON --- */
+
+.gp-3d-icon-box {
+    width: 120px;
+    height: 120px;
+    background: #ffffff;
+    border-radius: 20px;
+    /* 3D Transform look */
+    transform: rotate(-45deg) translateY(-60px);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto -40px auto;
+    /* Pull layout up */
+    border: 4px solid var(--gp-teal);
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.gp-3d-icon-inner {
+    transform: rotate(45deg);
+    /* Counter-rotate image */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gp-service-img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.5s;
+}
+
+
+/* Icon Hover Animation */
+
+.gp-premium-card:hover .gp-3d-icon-box {
+    transform: rotate(0deg) translateY(-70px) scale(1.1);
+    /* Straighten and lift */
+    background: var(--gp-teal);
+    border-color: #fff;
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.6);
+}
+
+.gp-premium-card:hover .gp-3d-icon-inner {
+    transform: rotate(0deg);
+}
+
+.gp-premium-card:hover .gp-service-img {
+    transform: scale(1.2);
+    filter: brightness(0) invert(1);
+    /* Make icon white on teal bg */
+}
+
+
+/* --- CONTENT TYPOGRAPHY --- */
+
+.gp-card-content {
+    padding-top: 20px;
+}
+
+.gp-card-title {
+    font-family: var(--font-head);
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    /* White text on dark card */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Title Underline */
+
+.gp-card-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--gp-teal);
+    margin: 10px auto 0;
+    transition: width 0.3s ease;
+}
+
+.gp-premium-card:hover .gp-card-title::after {
+    width: 100%;
+    /* Expands on hover */
+}
+
+.gp-card-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #94a3b8;
+    /* Light grey text */
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.gp-premium-card:hover .gp-card-text {
+    color: #e2e8f0;
+    /* Brighter white on hover */
+}
+
+
+/* --- SEXY BOTTOM WAVE --- */
+
+.gp-wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.gp-wave-svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+}
+
+.gp-wave-path {
+    fill: url(#wave-gradient);
+}
+
+
+/* Gradient Animation Definition */
+
+.gp-wave-anim stop {
+    animation: color-shift 4s infinite alternate;
+}
+
+@keyframes color-shift {
+    0% {
+        stop-color: var(--gp-dark);
+    }
+    100% {
+        stop-color: var(--gp-teal);
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .gp-premium-card {
+        margin-bottom: 60px;
+        margin-top: 60px;
+    }
+}
+
+
+/* --- SECTION STYLING --- */
+
+.gp-client-section {
+    padding: 60px 0 60px 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Background Watermark/Decoration */
+
+.gp-client-section::before {
+    content: 'PARTNERS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-head);
+    font-size: 15vw;
+    /* Huge responsive text */
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.02);
+    /* Barely visible watermark */
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+}
+
+
+/* --- HEADER --- */
+
+.gp-header-wrap {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gp-tagline {
+    font-family: var(--font-tech);
+    color: var(--gp-teal);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.gp-main-title {
+    font-family: var(--font-head);
+    font-size: 52px;
+    color: var(--gp-dark);
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.gp-main-title span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--gp-dark);
+    /* Outline effect text */
+}
+
+
+/* --- MARQUEE CONTAINER --- */
+
+.gp-marquee-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Fade edges to make it look infinite */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+
+/* Marquee Track (The moving part) */
+
+.gp-marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 60px;
+    /* Space between logos */
+    padding: 30px 0;
+}
+
+
+/* Animation Definitions */
+
+.marquee-left {
+    animation: scroll-left 40s linear infinite;
+}
+
+.marquee-right {
+    animation: scroll-right 40s linear infinite;
+}
+
+
+/* Pause on Hover */
+
+.gp-marquee-container:hover .gp-marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    to {
+        transform: translateX(calc(-50% - 30px));
+    }
+    /* Move half width + half gap */
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(calc(-50% - 30px));
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* --- LOGO ITEMS --- */
+
+.gp-logo-item {
+    width: 180px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    /* border-radius: 12px; */
+    /* Subtle glass look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    position: relative;
+}
+
+.gp-logo-img {
+    max-width: 80%;
+    max-height: 70%;
+    object-fit: contain;
+    /* REMOVED GRAYSCALE - Logos are now colorful by default */
+    transition: all 0.4s ease;
+}
+
+
+/* --- HOVER EFFECTS (Simple Scale & Shadow) --- */
+
+
+/* Only apply effect to the hovered item */
+
+.gp-marquee-container .gp-logo-item:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 20px 50px rgba(6, 182, 212, 0.2);
+    /* Teal Glow */
+    border-color: var(--gp-teal);
+    z-index: 10;
+}
+
+
+/* Removed "dimming" effect on other items to keep everything colorful */
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .gp-main-title {
+        font-size: 36px;
+    }
+    .gp-logo-item {
+        width: 140px;
+        height: 80px;
+    }
+    .gp-marquee-track {
+        gap: 30px;
+    }
+}
+
+
+/* --- INDUSTRIAL FOOTER WRAPPER --- */
+
+.gp-ind-footer {
+    background-color: #0b0f19;
+    /* Darker Machine Black */
+    color: var(--gp-text);
+    position: relative;
+    padding-top: 100px;
+    overflow: hidden;
+    /* Top Heavy Steel Bar Effect */
+    border-top: 6px solid var(--gp-teal);
+}
+
+
+/* 1. Engineering Grid Pattern (Blueprint Look) */
+
+.gp-ind-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* 2. Metal Noise Texture - ENHANCED for more Industrial Feel */
+
+.gp-ind-footer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Using a more pronounced metal panel texture with rivets */
+    background-image: url('https://www.transparenttextures.com/patterns/rivets.png');
+    /* Source for a simple riveted metal texture */
+    background-color: rgba(15, 23, 42, 0.2);
+    /* Blend with base color */
+    background-blend-mode: overlay;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1350px;
+}
+
+
+/* --- WIDGETS --- */
+
+.gp-widget {
+    margin-bottom: 50px;
+}
+
+
+/* Titles - Stenciled Look */
+
+.gp-wid-title {
+    font-family: var(--font-head);
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Decorative "Screw" next to title */
+
+.gp-wid-title::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--gp-teal);
+    box-shadow: 0 0 5px var(--gp-teal);
+}
+
+
+/* --- ABOUT COLUMN (REDESIGNED) --- */
+
+.gp-logo-box {
+    background: #1e293b;
+    /* Dark Metal Background */
+    padding: 20px;
+    display: inline-block;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 2px solid #334155;
+    /* Rugged Border */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Depth and Shadow */
+    position: relative;
+}
+
+
+/* Add "Bolts" to the corners of the logo box */
+
+.gp-logo-box::before,
+.gp-logo-box::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #475569;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.8), 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.gp-logo-box::before {
+    top: 8px;
+    left: 8px;
+}
+
+.gp-logo-box::after {
+    top: 8px;
+    right: 8px;
+}
+
+.gp-footer-logo-img {
+    width: 240px;
+    /* Increased Size */
+    height: auto;
+    /* Filter to make it look integrated, assuming the original logo is dark */
+    filter: brightness(0) invert(0.9) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.gp-desc {
+    color: #cbd5e1;
+    /* Lighter text for better contrast on dark */
+    line-height: 1.7;
+    font-size: 15px;
+    text-align: justify;
+    /* Removed side border, adding a subtle text shadow instead */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding-left: 5px;
+}
+
+
+/* Hexagonal Social Icons (Nuts/Bolts Look) */
+
+.gp-social-hex {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.gp-hex-btn {
+    width: 45px;
+    height: 50px;
+    /* Hexagon proportions */
+    background: var(--gp-metal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gp-teal);
+    text-decoration: none;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: all 0.3s;
+    font-size: 18px;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    /* Subtle teal border */
+}
+
+.gp-hex-btn:hover {
+    background: var(--gp-teal);
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--gp-teal);
+}
+
+
+/* --- PRODUCT LIST (Technical Catalog Style) --- */
+
+.gp-prod-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.gp-prod-list li {
+    margin-bottom: 12px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    /* Dashed line like blueprint */
+    padding-bottom: 12px;
+    transition: padding-left 0.3s;
+}
+
+.gp-prod-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.gp-prod-link:hover {
+    color: var(--gp-teal);
+}
+
+.gp-prod-list li:hover {
+    padding-left: 10px;
+    /* Indent on hover */
+    border-bottom-color: var(--gp-teal);
+}
+
+.gp-arrow {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+
+/* --- CONTACT INFO (Industrial Panel Style) --- */
+
+.gp-contact-box {
+    background: rgba(30, 41, 59, 0.5);
+    /* Semi-transparent panel */
+    border: 1px solid var(--gp-border);
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: background 0.3s;
+}
+
+.gp-contact-box:hover {
+    background: rgba(6, 182, 212, 0.05);
+    border-color: var(--gp-teal);
+}
+
+.gp-icon-square {
+    width: 40px;
+    height: 40px;
+    background: var(--gp-dark);
+    border: 1px solid var(--gp-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gp-teal);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.gp-info-text h5 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.gp-info-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+
+/* --- BOTTOM TICKER (Machine Readout) --- */
+
+.gp-ind-marquee {
+    background: #000;
+    border-top: 2px solid var(--gp-teal);
+    border-bottom: 2px solid var(--gp-teal);
+    padding: 12px 0;
+    margin-top: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Courier New', monospace;
+    /* Monospace for machine look */
+}
+
+.gp-ticker-content {
+    display: inline-block;
+    animation: ticker 35s linear infinite;
+}
+
+.gp-ticker-item {
+    color: var(--gp-teal);
+    font-size: 14px;
+    margin: 0 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    position: relative;
+}
+
+.gp-ticker-item::after {
+    content: '•';
+    position: absolute;
+    right: -25px;
+    color: #fff;
+}
+
+.gp-ticker-item:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--gp-teal);
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* --- COPYRIGHT --- */
+
+.gp-bottom-bar {
+    background: #05080f;
+    padding: 20px 0;
+    border-top: 1px solid #1e293b;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.gp-bottom-bar a {
+    color: var(--gp-teal);
+    text-decoration: none;
+}
+
+
+/* Responsive */
+
+@media (max-width: 991px) {
+    .gp-widget {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .gp-ind-footer {
+        padding-top: 60px;
+    }
+}
