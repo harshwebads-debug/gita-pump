@@ -2581,3 +2581,124 @@ video {
         padding-top: 60px;
     }
 }
+
+.gp-makeindia-logo {
+    width: 200px;
+    /* opacity: 0.9; */
+    /* filter: brightness(0) invert(1); */
+    /* White theme ke liye perfect */
+}
+
+@media (max-width: 576px) {
+    .gp-makeindia-logo {
+        width: 110px;
+    }
+}
+
+.zed-showcase-section {
+    padding: 90px 0;
+    background: linear-gradient(145deg, #071425, #04101f);
+}
+
+
+/* FLEX */
+
+.zed-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+
+/* IMAGE WRAPPER (NO CUT, FULL RESPONSIVE) */
+
+.zed-img-wrapper {
+    width: 420px;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 35px rgba(0, 180, 255, 0.2);
+}
+
+.zed-img-wrapper img {
+    width: 100%;
+    height: auto;
+    /* ensures NO CROPPING */
+    object-fit: contain;
+    /* full image always visible */
+    border-radius: 10px;
+}
+
+
+/* RIGHT SIDE CONTENT */
+
+.zed-info h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.zed-info h2 span {
+    color: #0bd2ff;
+}
+
+.zed-info h3 {
+    font-size: 22px;
+    color: #0bd2ff;
+    margin-bottom: 25px;
+}
+
+.zed-desc {
+    color: #cdd8e6;
+    line-height: 1.8;
+    max-width: 460px;
+    margin-bottom: 28px;
+}
+
+.zed-features-box {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 25px 30px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zed-features-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.zed-features-box li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+    color: #eaf2ff;
+    margin-bottom: 12px;
+}
+
+.zed-features-box i {
+    font-size: 20px;
+    color: #0bd2ff;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 992px) {
+    .zed-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .zed-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .zed-info h2 {
+        font-size: 34px;
+    }
+}
